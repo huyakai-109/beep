@@ -1,13 +1,12 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Threading;
 
 namespace demo
 {
-    internal class Program
+    class Program
     {
         static int[] DO = { 131, 262, 523, 1074 };
         static int[] DOs = { 139, 277, 540, 1109 };
@@ -23,7 +22,6 @@ namespace demo
         static int[] SI = { 247, 494, 988, 1976 };
         static void Main(string[] args)
         {
-
             Console.OutputEncoding = Encoding.UTF8;
             string[] cau1 = { "Làm", "gì", "có", "ai", "thương", "em", "như", "vậy" };
             int[] tanSo1 = { SOL[2], SOL[2], MI[3], RE[3], DO[3], DO[3], LA[2], SOL[2] };
@@ -45,10 +43,10 @@ namespace demo
             int[] khoangThoiGian4 = { 150, 150, 150, 150, 150, 150, 180, 150 };
             int[] thoiGianCho4 = { 180, 180, 220, 180, 180, 180, 180, 300 };
 
-            khung();
+            Khung();
             thanhDemNguoc();
             Console.Clear();
-            khung();
+            Khung();
 
             Console.SetCursorPosition(46, 5);
             Karaoke(cau1, tanSo1, khoangThoiGian1, thoiGianCho1, 5);
@@ -71,16 +69,16 @@ namespace demo
 
             for (int i = 0; i < loiBaiHat.Length; i++)
             {
-                int dem = 0;
+                int cot = 0;
 
                 for (int z = 0; z <= i; z++)
                 {
-                    dem += loiBaiHat[z].Length;
+                    cot += loiBaiHat[z].Length;
                 }
-                dem += i;
+                cot += i;
 
-                Console.SetCursorPosition(dem+46, dong);
-                
+                Console.SetCursorPosition(cot + 46, dong);
+
                 for (int j = 0; j < loiBaiHat[i].Length; j++)
                 {
                     Console.Write("\b");
@@ -94,10 +92,10 @@ namespace demo
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine();
 
-        }       
-        static void khung()
+        }
+        static void Khung()
         {
-           
+
             for (int i = 0; i < 5; i++)
             {
                 Console.SetCursorPosition(45, i);
@@ -112,7 +110,7 @@ namespace demo
                     {
                         Console.Write("   ");
                     }
-                }             
+                }
             }
             Console.ForegroundColor = ConsoleColor.Green;
             Console.SetCursorPosition(57, 1);
@@ -155,7 +153,7 @@ namespace demo
                     Console.ForegroundColor = ConsoleColor.White;
                     Console.SetCursorPosition(61, 6);
                     Console.Write("2");
-                    Console.Beep();                  
+                    Console.Beep();
                     Console.SetCursorPosition(70, 6);
 
                 }
@@ -164,15 +162,14 @@ namespace demo
                     Console.ForegroundColor = ConsoleColor.White;
                     Console.SetCursorPosition(61, 6);
                     Console.Write("3");
-                    Console.Beep();                   
+                    Console.Beep();
                     Console.SetCursorPosition(68, 6);
 
                 }
 
-             Thread.Sleep(800);
+                Thread.Sleep(800);
             }
-            
+
         }
-        
     }
 }
